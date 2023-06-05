@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Editor JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container ">
+        <h2> Photo Editor</h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="filter">
+                    <label class="title">Filters</label>
+                    <div class="options">
+                        <button id="brightness" onclick = "brightness()" >Brightness</button>
+                        <button id="saturation" onclick = "saturation()">Saturation</button>
+                        <button id="inversion" onclick = "inversion()">Inversion</button>
+                        <button id="grayscale" onclick = "grayscale()">Grayscale</button>
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p class="name" id = "n">Brightness</p>
+                            <p class="value" id="display">100%</p>
+                        </div>
+                        <input id = "slide" type="range" value="100" min="0" max="200"  oninput="chng()" >
+                    </div>
+                </div>
+                <div class="rotate">
+                    <label class="title">Rotate & Flip</label>
+                    <div class="options">
+                        <button id="left" onclick = "rotate_left()"><i class="fa-solid fa-rotate-left"></i></button>
+                        <button id="right"  onclick = "rotate_right()"><i class="fa-solid fa-rotate-right"></i></button>
+                        <button id="horizontal" onclick = "flip_horizontal()"><i class='bx bx-reflect-vertical'></i></button>
+                        <button id="vertical"  onclick = "flip_vertical()"><i class='bx bx-reflect-horizontal' ></i></button>
+                    </div>
+                </div>
+                <div class = "extra1">
+                    <div class="extra1-info">
+                        <ul>
+                            <li><p class="nam" id = "ex">Grayscale<input id = "slide1" type="range" value="100" min="0" max="200"  oninput="additional_gray()" ></p></li>
+                                <p class="val1" id="disp1">100%</p>
+                                <li><p class="nam" id = "ex">Blur<input id = "slide2" type="range" value="100" min="0" max="200"  oninput="additional_blur()" ></p></li>
+                               <p class="val2" id="disp2">100%</p>
+                                    <li><p class="nam" id = "ex">Rotate<input id = "slide3" type="range" value="100" min="0" max="200"  oninput="additional_rot()" ></p></li>
+                                    <p class="val3" id="disp3">100%</p>
+                                        <li><p class="nam" id = "ex">Sepia<input id = "slide4" type="range" value="100" min="0" max="200"  oninput="additional_sep()" ></p></li>
+                                        <p class="val4" id="disp4">100%</p>
+                        </ul>
+                    </div>        
+                </div>
+               
+            </div>
+            <div class="preview-img" id = "image">
+                <img src="image-placeholder.svg" alt="preview-img">
+            </div>
+        </div>
+        <div class="controls">
+            <button class="reset-filter" onclick = "resetfilters()">Reset Filters</button>
+            <div class="row">
+                <input type="file" class="file-input" onchange="show()" accept="image/*" hidden >
+                <button class="choose-img" onclick="choose()">Choose Image</button>
+                <button class="save-img">Save Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src = "src.js"></script>
+    
+  </body>
+</html>
